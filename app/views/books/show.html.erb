@@ -1,0 +1,35 @@
+<div class="container px-5 px-sm-0">
+  <div class="row">
+    <%= render "left", user: @user %>
+    
+    <div class="col-md-8 offset-md-1">
+      <h2>Book detail</h2>
+      <table class="table">
+        <tbody>
+          <tr>
+            <th>
+              <a href="/users/<%= @book.user_id %>">
+                <%= image_tag @book.user.get_profile_image(100, 100) %></br>
+                <%= @book.user.name %>
+              </a>
+            </th>
+            <th>
+              <a href="/books/<%= @book.id %>"><%= @book.title %></a>
+            </th>
+            <th><%= @book.body %></th>
+            <% if @book.user_id == current_user.id %>
+              <th>
+                <a class="btn btn-sm btn-success" href="/books/<%= @book.id %>/edit">Edit</a>
+              </th>
+              <th>
+                <a data-confirm="本当に消しますか？" class="btn btn-sm btn-danger" rel="nofollow" data-method="delete" href="/books/<%= @book.id %>">
+                  Destroy
+                </a>
+              </th>
+            <% end %>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
