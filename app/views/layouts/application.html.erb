@@ -13,17 +13,17 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 50px;">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
           <a class="navbar-brand" href="/">Bookers</a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expand="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse social" id="navbarNavDropdown">
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <% if user_signed_in? %>
                 <li>
-                  <a class="navbar-brand" href="/users/<%= current_user.id %>"><i class="fa-solid fa-house"></i> Home</a>
+                  <a class="navbar-brand" href="/users/<%= current_user.id %>"><i class="fa-solid fa-home"></i> Home</a>
                 </li>
                 <li>
                   <a class="navbar-brand" href="/users"><i class="fa-solid fa-users"></i> Users</a>
@@ -32,19 +32,19 @@
                   <a class="navbar-brand" href="/books"><i class="fa-solid fa-book-open"></i> Books</a>
                 </li>
                 <li>
-                  <a class="navbar-brand" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa-solid fa-right-from-bracket"></i> Log out</a>
+                  <a class="navbar-brand" rel="nofollow" data-method="delete" href="/users/sign_out"><i class="fa-solid fa-sign-out-alt"></i> Log out</a>
                 </li>
               <% else %>
-                  <a class="navbar-brand" href="/"><i class="fa-solid fa-house"></i> Home</a>
+                  <a class="navbar-brand" href="/"><i class="fa-solid fa-home"></i> Home</a>
                 </li>
                 <li>
-                  <a class="navbar-brand" href="/homes/about"><i class="fa-solid fa-link"></i> About</a>
+                  <a class="navbar-brand" href="/home/about"><i class="fa-solid fa-link"></i> About</a>
                 </li>
                 <li>
                   <a class="navbar-brand" href="/users/sign_up"><i class="fa-solid fa-user-plus"></i> Sign up</a>
                 </li>
                 <li>
-                  <a class="navbar-brand" href="/users/sign_in"><i class="fa-solid fa-right-to-bracket"></i> Log in</a>
+                  <a class="navbar-brand" href="/users/sign_in"><i class="fa-solid fa-sign-in-alt"></i> Log in</a>
                 </li>                
               <% end %>
             </ul>
