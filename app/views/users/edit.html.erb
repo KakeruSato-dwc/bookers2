@@ -4,9 +4,15 @@
       <h1>User info</h1>
       <% if @user.errors.any? %>
         <div class="error-message">
-          <h3><%= @user.errors.count %> error prohibited this obj from being saved:</h3>
+          <% if @user.errors.count == 1 %>
+            <h3><%= @user.errors.count %> error prohibited this obj from being saved:</h3>
+          <% else %>
+            <h3><%= @user.errors.count %> errors prohibited this obj from being saved:</h3>
+          <% end %>
           <ul>
-            <li>Name is too short (minimum is 2 characters)</li>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
           </ul>
         </div>
       <% end %>
